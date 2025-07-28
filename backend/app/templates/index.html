@@ -1,0 +1,234 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - GrowFit{% endblock %}
+
+{% block content %}
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>AI-Powered Crop Price Prediction</h1>
+            <p>Empowering farmers with accurate forecasts for better planning and increased profitability.</p>
+            <a href="#prediction-section" class="btn btn-primary">Get Started</a>
+        </div>
+    </section>
+
+    <section id="prediction-section" class="prediction-section">
+        <div class="container">
+            <h2>Get Your Crop Price Prediction</h2>
+            <p class="section-description">Enter the details below to receive an estimated market price for your crop.</p>
+            <div class="prediction-form-container">
+                <form id="predictionForm" class="growfit-form">
+                    <div class="form-group">
+                        <label for="crop_name"><i class="fas fa-seedling"></i> Crop Name:</label>
+                        <select id="crop_name" name="crop_name" required>
+                            <option value="">Select Crop</option>
+                            <option value="Cotton">Cotton</option>
+                            <option value="Barley">Barley</option>
+                            <option value="Soybean">Soybean</option>
+                            <option value="Maize">Maize</option>
+                            <option value="Rice">Rice</option>
+                            <option value="Wheat">Wheat</option>
+                            <option value="Millet">Millet</option>
+                            <option value="Sugarcane">Sugarcane</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="region"><i class="fas fa-globe-americas"></i> Region:</label>
+                        <select id="region" name="region" required>
+                            <option value="">Select Region</option>
+                            <option value="East">East</option>
+                            <option value="West">West</option>
+                            <option value="Central">Central</option>
+                            <option value="North">North</option>
+                            <option value="South">South</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="season"><i class="fas fa-cloud-sun"></i> Season:</label>
+                        <select id="season" name="season" required>
+                            <option value="">Select Season</option>
+                            <option value="Summer">Summer</option>
+                            <option value="Spring">Spring</option>
+                            <option value="Winter">Winter</option>
+                            <option value="Autumn">Autumn</option>
+                            <option value="Monsoon">Monsoon</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="soil_type"><i class="fas fa-flask"></i> Soil Type:</label>
+                        <select id="soil_type" name="soil_type" required>
+                            <option value="">Select Soil Type</option>
+                            <option value="Sandy">Sandy</option>
+                            <option value="Peaty">Peaty</option>
+                            <option value="Clayey">Clayey</option>
+                            <option value="Loamy">Loamy</option>
+                            <option value="Silty">Silty</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="weather_condition"><i class="fas fa-cloud-showers-heavy"></i> Weather Condition:</label>
+                        <select id="weather_condition" name="weather_condition" required>
+                            <option value="">Select Weather</option>
+                            <option value="Humid">Humid</option>
+                            <option value="Rainy">Rainy</option>
+                            <option value="Dry">Dry</option>
+                            <option value="Moderate">Moderate</option>
+                            <option value="Cold">Cold</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rainfall_mm"><i class="fas fa-water"></i> Rainfall (mm):</label>
+                        <input type="number" id="rainfall_mm" name="rainfall_mm" step="0.01" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="temperature_c"><i class="fas fa-thermometer-half"></i> Temperature (&deg;C):</label>
+                        <input type="number" id="temperature_c" name="temperature_c" step="0.01" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="humidity_percent"><i class="fas fa-percent"></i> Humidity (%):</label>
+                        <input type="number" id="humidity_percent" name="humidity_percent" step="0.01" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fertilizer_used_kg"><i class="fas fa-flask"></i> Fertilizer Used (kg):</label>
+                        <input type="number" id="fertilizer_used_kg" name="fertilizer_used_kg" step="0.01" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="market_demand"><i class="fas fa-chart-line"></i> Market Demand:</label>
+                        <input type="number" id="market_demand" name="market_demand" step="0.01" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="supply_quantity"><i class="fas fa-truck-loading"></i> Supply Quantity:</label>
+                        <input type="number" id="supply_quantity" name="supply_quantity" step="0.01" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-success"><i class="fas fa-calculator"></i> Get Prediction</button>
+                </form>
+
+                <div id="predictionResult" class="prediction-result-box">
+                    <p class="placeholder-text">Enter details above and click 'Get Prediction' to see the estimated crop price.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features-section" class="features-section">
+        <div class="container">
+            <h2>Why Choose GrowFit?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-chart-line feature-icon"></i>
+                    <h3>Accurate Predictions</h3>
+                    <p>Leverage advanced AI models for highly precise crop price forecasts.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-mobile-alt feature-icon"></i>
+                    <h3>Easy to Use</h3>
+                    <p>Intuitive interface designed for farmers, accessible on any device.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-handshake feature-icon"></i>
+                    <h3>Empowering Farmers</h3>
+                    <p>Make data-driven decisions to optimize planting and selling strategies.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-lightbulb feature-icon"></i>
+                    <h3>Insightful Data</h3>
+                    <p>Understand market trends and factors influencing crop prices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p class="section-description">Have questions or feedback? We'd love to hear from you!</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Farm Lane, Agri-City, AG 12345</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> info@growfit.com</p>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="contact-name">Your Name:</label>
+                        <input type="text" id="contact-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Your Email:</label>
+                        <input type="email" id="contact-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message:</label>
+                        <textarea id="contact-message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block body_extra %}
+<script>
+    document.getElementById('predictionForm').addEventListener('submit', async function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const predictionResultDiv = document.getElementById('predictionResult');
+        predictionResultDiv.innerHTML = '<p class="loading-text"><i class="fas fa-spinner fa-spin"></i> Predicting...</p>'; // Show loading message with spinner
+
+        const data = {
+            crop_name: document.getElementById('crop_name').value,
+            region: document.getElementById('region').value,
+            season: document.getElementById('season').value,
+            soil_type: document.getElementById('soil_type').value,
+            weather_condition: document.getElementById('weather_condition').value,
+            rainfall_mm: parseFloat(document.getElementById('rainfall_mm').value),
+            temperature_c: parseFloat(document.getElementById('temperature_c').value),
+            humidity_percent: parseFloat(document.getElementById('humidity_percent').value),
+            fertilizer_used_kg: parseFloat(document.getElementById('fertilizer_used_kg').value),
+            market_demand: parseFloat(document.getElementById('market_demand').value),
+            supply_quantity: parseFloat(document.getElementById('supply_quantity').value)
+        };
+
+        try {
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+            
+            if (response.ok) {
+                if (result.prediction !== undefined && result.prediction !== null) {
+                    predictionResultDiv.innerHTML = `
+                        <h3>Predicted Crop Price:</h3>
+                        <p class="prediction-value">₹ ${result.prediction.toFixed(2)}</p>
+                        <p class="success-message">Prediction successful!</p>
+                    `;
+                } else {
+                    predictionResultDiv.innerHTML = `<p class="error-text"><i class="fas fa-exclamation-circle"></i> Error: Prediction result is missing or invalid.</p>`;
+                }
+            } else {
+                predictionResultDiv.innerHTML = `<p class="error-text"><i class="fas fa-exclamation-circle"></i> Error: ${result.error || 'Something went wrong on the server.'}</p>`;
+            }
+        } catch (error) {
+            console.error('Fetch error:', error);
+            predictionResultDiv.innerHTML = `<p class="error-text"><i class="fas fa-times-circle"></i> Network error or server unavailable. Please check your connection.</p>`;
+        }
+    });
+</script>
+{% endblock %}

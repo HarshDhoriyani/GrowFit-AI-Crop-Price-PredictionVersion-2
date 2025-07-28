@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}500 Internal Server Error - GrowFit{% endblock %}
+
+{% block content %}
+    <section class="error-section">
+        <div class="container">
+            <i class="fas fa-bug error-icon"></i>
+            <h2>500 - Internal Server Error</h2>
+            <p>Something went wrong on our server. We are working to fix it!</p>
+            <p><a href="{{ url_for('main.index') }}" class="btn btn-primary">Go to Home Page</a></p>
+        </div>
+    </section>
+{% endblock %}
