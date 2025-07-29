@@ -1,3 +1,0 @@
-# This is a binary file representing your trained machine learning model pipeline.
-# Please download this file and place it in the 'models/' directory of your project.
-# Its content is not human-readable directly here.
